@@ -34,7 +34,7 @@ import Srichki from '../Data/srichki.json'
 const ReadingSyl=()=>{
     
     const [isVisible,setIsVisible]=useState(true);
-    const [currentSrichka, setCurrentSricka] = useState("");
+    const [currentSrichka, setCurrentSricka] = useState("MA");
     const [currentSid, setCurrentSid] = useState(1);
     //let sid:number=1;
     let sr:string = 'АБ'
