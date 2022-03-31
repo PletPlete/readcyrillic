@@ -73,9 +73,7 @@ const ReadingSyl=()=>{
     return (
         <div className='scr' onClick={handleVisibility}>
         {/* <Grid className='card'> */}
-        <div>
-          {Srichki.map((id) => <p>{id.srichka}</p>)}
-          </div>
+        
           <div className="card" >
             <p>{currentSrichka}</p>
             </div>
