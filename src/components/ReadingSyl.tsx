@@ -46,6 +46,9 @@ const ReadingSyl=()=>{
 
        
         setCurrentSid(currentSid+1);
+        if (currentSid===24) {
+            setCurrentSid(1)
+        }
         let selectedItem= Srichki.find(item => item.id === currentSid);
         // sr =selectedItem.srichka;
         
