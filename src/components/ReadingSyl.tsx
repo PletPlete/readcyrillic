@@ -1,7 +1,8 @@
 //import { Segment } from "semantic-ui-react"
 import '../App.css';
 import React, { Component, SyntheticEvent, useState } from 'react'
-import { Form, Grid, Image, Transition } from 'semantic-ui-react'
+import { Form,   Transition } from 'semantic-ui-react'
+import Srichki from '../Data/srichki.json'
 
 // const transitions = [
   
@@ -33,25 +34,54 @@ import { Form, Grid, Image, Transition } from 'semantic-ui-react'
 const ReadingSyl=()=>{
     
     const [isVisible,setIsVisible]=useState(true);
-
-
+    const [currentSrichka, setCurrentSricka] = useState("");
+    const [currentSid, setCurrentSid] = useState(1);
+    //let sid:number=1;
+    let sr:string = 'АБ'
     const handleVisibility =(event:SyntheticEvent) =>{
         setIsVisible(!isVisible)
     }
+
+    const goNext= ()=>{
+
+       
+        setCurrentSid(currentSid+1);
+        let selectedItem= Srichki.find(item => item.id === currentSid);
+        // sr =selectedItem.srichka;
+        
+        // if (typeof selectedItem.srichka === 'string') {
+        //     sr =selectedItem.srichka as string;
+        //   }
+
+          //let sr = ({selectedItem: {srichka:{}}})
+          let sr=selectedItem?.srichka
+          console.log(sr)
+         // setCurrentSricka(sr.toString())
+        // if (sr) {
+        //     setCurrentSricka(sr)
+        //   }
+          if (typeof sr === 'string') {
+            setCurrentSricka(sr)
+          }
+        console.log(typeof sr)
+        //setCurrentSricka(sr)
+        console.log(currentSrichka)
+        return currentSrichka
+
+    }
+
     return (
         <div className='scr' onClick={handleVisibility}>
         {/* <Grid className='card'> */}
-
-        <Transition.Group animation='horizontal flip' duration='200'>
-        
-          <div >
-            {isVisible &&
-            (<div className="card" >
-            <p>MA</p>
-            </div>)}
-          
+        <div>
+          {Srichki.map((id) => <p>{id.srichka}</p>)}
+          </div>
+          <div className="card" >
+            <p>{currentSrichka}</p>
             </div>
-          </Transition.Group> 
+
+          <button onClick={goNext}>next</button>
+    
         
       </div>
      
@@ -60,14 +90,3 @@ const ReadingSyl=()=>{
 }
 export default ReadingSyl
 
-   {/* //  <div className='ui card'>
-        // {/* //     <Segment className='card'> 
-             <p>MA</p>
-              </Segment>
-
-        //  </div> */}
-
-
-        {/* <div className="card">
-  <p>MA</p>
-  </div> */}
