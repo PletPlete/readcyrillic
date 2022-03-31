@@ -71,14 +71,14 @@ const ReadingSyl=()=>{
     }
 
     return (
-        <div className='scr' onClick={handleVisibility}>
+        <div className='scr' onClick={goNext}>
         {/* <Grid className='card'> */}
         
           <div className="card" >
             <p>{currentSrichka}</p>
             </div>
 
-          <button onClick={goNext}>next</button>
+       
     
         
       </div>
