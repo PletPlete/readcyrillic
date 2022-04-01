@@ -14,9 +14,12 @@ const UchiAzbuka=()=>{
     const goNext= ()=>{
 
        
-        setCurrentSid(currentSid+1);
-        if (currentSid===24) {
+       
+        if (currentSid===30) {
             setCurrentSid(1)
+        }
+        else{
+            setCurrentSid(currentSid+1);
         }
         let selectedItem= Azbuka.find(item => item.id === currentSid);
      
