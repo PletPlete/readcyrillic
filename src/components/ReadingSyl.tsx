@@ -38,25 +38,20 @@ const ReadingSyl=()=>{
     const [currentSid, setCurrentSid] = useState(1);
     //let sid:number=1;
     let sr:string = 'АБ'
-    const handleVisibility =(event:SyntheticEvent) =>{
-        setIsVisible(!isVisible)
-    }
+   
 
     const goNext= ()=>{
 
        //note to do should be random
-        setCurrentSid(currentSid+1);
-        if (currentSid===24) {
+        
+        if (currentSid===31) {
             setCurrentSid(1)
         }
+        else {
+          setCurrentSid(currentSid+1);
+        }
         let selectedItem= Srichki.find(item => item.id === currentSid);
-        // sr =selectedItem.srichka;
         
-        // if (typeof selectedItem.srichka === 'string') {
-        //     sr =selectedItem.srichka as string;
-        //   }
-
-          //let sr = ({selectedItem: {srichka:{}}})
           let sr=selectedItem?.srichka
           console.log(sr)
          // setCurrentSricka(sr.toString())
@@ -66,8 +61,6 @@ const ReadingSyl=()=>{
           if (typeof sr === 'string') {
             setCurrentSricka(sr)
           }
-        console.log(typeof sr)
-        //setCurrentSricka(sr)
         console.log(currentSrichka)
         return currentSrichka
 

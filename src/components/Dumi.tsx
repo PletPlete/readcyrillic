@@ -17,7 +17,7 @@ const ParviDumiCvqt=()=>{
 
        
        
-        if (currentSid===3) {
+        if (currentSid===15) {
             setCurrentSid(1)
         }
         else{
