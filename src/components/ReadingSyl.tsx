@@ -44,7 +44,7 @@ const ReadingSyl=()=>{
 
     const goNext= ()=>{
 
-       
+       //note to do should be random
         setCurrentSid(currentSid+1);
         if (currentSid===24) {
             setCurrentSid(1)
