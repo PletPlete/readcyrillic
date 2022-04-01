@@ -25,27 +25,39 @@ const ParviDumiCvqt=()=>{
         }
 
         let selectedItem= Dumi.find(item => item.id === currentSid);
-     
+     let du=selectedItem?.srichka1
+     let ma=selectedItem?.srichka2
           let duma=selectedItem?.srichka1+"-"+selectedItem?.srichka2
           console.log(duma)
    
           if (typeof duma === 'string') {
             setCurrentDuMa(duma)
+            
+            
           }
-      
+          if (typeof du === 'string' && typeof ma === 'string') {
+            setCurrentMa(ma)
+            setCurrentDu(du)
+            
+          }
         console.log(currentDuMa)
-        return currentDuMa
+        console.log(currentDu+currentMa.fontcolor("red"))
+        //return currentDuMa
+        return currentDu+currentMa.fontcolor("red")
 
     }
 
     return (
         <div className='scr' onClick={goNext}>
-     
-        <p>Coming soon...</p>
-          <div className="cardDumi" >
-            <p>{currentDuMa}</p>
-            </div>
 
+       
+          <div className="cardDumi" >
+             <br></br>
+              <text className="DuColor">{currentDu}</text><text className="MaColor">{currentMa}</text>
+            {/* <p>{currentDu}<p className="MaColor">{currentMa}</p></p> */}
+  
+
+      </div>
       </div>
 )
 }
